@@ -1,39 +1,28 @@
+// index.js
 require('dotenv').config();
-
 const express = require('express');
-const { Client, GatewayIntentBits } = require('discord.js');
-const { Pool } = require('pg');
+const bot = require('./bot');
+const api = require('./api');
+const auth = require('./auth');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
+// middleware
 app.use(express.json());
-
-// Database
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
-
-// Test DB connection
-pool.connect()
-  .then(() => console.log('✅ Connected to PostgreSQL'))
-  .catch(err => console.error('❌ DB connection error:', err));
-
-// Discord bot
-const bot = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-
-bot.once('ready', () => {
-  console.log(`✅ Discord bot logged in as ${bot.user.tag}`);
-});
-
-bot.login(process.env.DISCORD_TOKEN);
-
-// Example API route
-app.get('/', (req, res) => {
-  res.send('Hello from backend API + Discord bot!');
-});
+const cors = require('cors');
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,  // e.g. http://localhost:5173
+    methods: ['GET','POST']
+  })
+);
+app.use('/assets', express.static('assets'));  // now after app is defined
+app.use('/auth', auth);  // mount auth routes
+app.use('/api', api);
 
 app.listen(port, () => {
   console.log(`✅ API server listening at http://localhost:${port}`);
 });
+
+bot.login(process.env.DISCORD_TOKEN);

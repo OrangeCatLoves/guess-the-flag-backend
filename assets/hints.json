@@ -1,0 +1,1381 @@
+{
+  "afghanistan": {
+    "population": "41M",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Kabul",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+  },
+  "albania": {
+    "population": "2.8M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Tirana",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "algeria": {
+    "population": "45M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Algiers",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "andorra": {
+    "population": "79K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Andorra la Vella",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "angola": {
+    "population": "36M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Luanda",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "antigua-and-barbuda": {
+    "population": "99K",
+    "last_letter": "A",
+    "word_count": 3,
+    "capital": "Saint John's",
+    "word_size": "_ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _"
+  },
+  "argentina": {
+    "population": "46M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Buenos Aires",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "armenia": {
+    "population": "2.8M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Yerevan",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "australia": {
+    "population": "26.5M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Canberra",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "austria": {
+    "population": "9M",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Vienna",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "azerbaijan": {
+    "population": "10.3M",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Baku",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "bahamas": {
+    "population": "410K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Nassau",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "bahrain": {
+    "population": "1.8M",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Manama",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "bangladesh": {
+    "population": "172M",
+    "last_letter": "H",
+    "word_count": 1,
+    "capital": "Dhaka",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "barbados": {
+    "population": "280K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Bridgetown",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "belarus": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "belgium": {
+    "population": "100K",
+    "last_letter": "M",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "belize": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "benin": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "bhutan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "bolivia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "bosnia-and-herzegovina": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 3,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _ _ _ _ _"
+  },
+  "botswana": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "brazil": {
+    "population": "100K",
+    "last_letter": "L",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "brunei": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "bulgaria": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "burkina-faso": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _      _ _ _ _"
+  },
+  "burundi": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "cambodia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "cameroon": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "canada": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "cape-verde": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _      _ _ _ _ _"
+  },
+  "central-african-republic": {
+    "population": "100K",
+    "last_letter": "C",
+    "word_count": 3,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _      _ _ _ _ _ _ _      _ _ _ _ _ _ _ _"
+  },
+  "chad": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "chile": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "china": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "colombia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "comoros": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "congo": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "costa-rica": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _"
+  },
+  "croatia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "cuba": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "cyprus": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "czechia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "democratic-republic-of-the-congo": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 5,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _      _ _ _ _ _ _ _ _      _ _      _ _ _      _ _ _ _ _"
+  },
+  "denmark": {
+    "population": "100K",
+    "last_letter": "K",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "djibouti": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "dominica": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "dominican-republic": {
+    "population": "100K",
+    "last_letter": "C",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _      _ _ _ _ _ _ _ _"
+  },
+  "east-timor": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _      _ _ _ _ _"
+  },
+  "ecuador": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "egypt": {
+    "population": "100K",
+    "last_letter": "T",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "el-salvador": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _      _ _ _ _ _ _ _ _"
+  },
+  "equatorial-guinea": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _      _ _ _ _ _ _"
+  },
+  "eritrea": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "estonia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "eswatini": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "ethiopia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "fiji": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "finland": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "france": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "gabon": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "gambia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "georgia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "germany": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "ghana": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "greece": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "grenada": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "guatemala": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "guinea": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "guinea-bissau": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _ _ _"
+  },
+  "guyana": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "haiti": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "honduras": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "hungary": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "iceland": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "india": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "indonesia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "iran": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "iraq": {
+    "population": "100K",
+    "last_letter": "Q",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "ireland": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "israel": {
+    "population": "100K",
+    "last_letter": "L",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "italy": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "ivory-coast": {
+    "population": "100K",
+    "last_letter": "T",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _"
+  },
+  "jamaica": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "japan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "jordan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "kazakhstan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "kenya": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "kiribati": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "north-korea": {
+    "population": "26M",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Pyongyang",
+    "word_size": "_ _ _ _ _      _ _ _ _ _"
+  },
+  "south-korea": {
+    "population": "52M",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Seoul",
+    "word_size": "_ _ _ _ _      _ _ _ _ _"
+  },
+  "kosovo": {
+    "population": "1.9M",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Pristina",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "kuwait": {
+    "population": "100K",
+    "last_letter": "T",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "kyrgyzstan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "laos": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "latvia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "lebanon": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "lesotho": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "liberia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "libya": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "liechtenstein": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _ _ _"
+  },
+  "lithuania": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "luxembourg": {
+    "population": "100K",
+    "last_letter": "G",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "madagascar": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "malawi": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "malaysia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "maldives": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "mali": {
+    "population": "100K",
+    "last_letter": "I",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "malta": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "marshall-islands": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _      _ _ _ _ _ _ _"
+  },
+  "mauritania": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "mauritius": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "mexico": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "micronesia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "moldova": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "monaco": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "mongolia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "montenegro": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "morocco": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "mozambique": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "myanmar": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "namibia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "nauru": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "nepal": {
+    "population": "100K",
+    "last_letter": "L",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "netherlands": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+  },
+  "new-zealand": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _      _ _ _ _ _ _ _"
+  },
+  "nicaragua": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "niger": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "nigeria": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "north-macedonia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _ _ _ _ _"
+  },
+  "norway": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "oman": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "pakistan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "palau": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "palestine": {
+    "population": "5.3M",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Ramallah",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "panama": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "papua-new-guinea": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 3,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _      _ _ _ _ _ _"
+  },
+  "paraguay": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "peru": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "philippines": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+  },
+  "poland": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "portugal": {
+    "population": "100K",
+    "last_letter": "L",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "qatar": {
+    "population": "100K",
+    "last_letter": "R",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "romania": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "russia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "rwanda": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "saint-kitts-and-nevis": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 4,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _      _ _ _      _ _ _ _ _"
+  },
+  "saint-lucia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _"
+  },
+  "saint-vincent-and-the-grenadines": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 5,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _ _ _      _ _ _      _ _ _      _ _ _ _ _ _ _ _ _ _"
+  },
+  "samoa": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "san-marino": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _      _ _ _ _ _ _"
+  },
+  "sao-tome-and-principe": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 4,
+    "capital": "Capital",
+    "word_size": "_ _ _      _ _ _ _      _ _ _      _ _ _ _ _ _ _ _"
+  },
+  "saudi-arabia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _ _"
+  },
+  "senegal": {
+    "population": "100K",
+    "last_letter": "L",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "serbia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "seychelles": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "sierra-leone": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _      _ _ _ _ _"
+  },
+  "singapore": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "slovakia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "slovenia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "solomon-islands": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _      _ _ _ _ _ _ _"
+  },
+  "somalia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "south-africa": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _ _"
+  },
+  "south-sudan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _      _ _ _ _ _"
+  },
+  "spain": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "sri-lanka": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 2,
+    "capital": "Capital",
+    "word_size": "_ _ _      _ _ _ _ _"
+  },
+  "sudan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "suriname": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "sweden": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "switzerland": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+  },
+  "syria": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "taiwan": {
+    "population": "23.5M",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Taipei",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "tajikistan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "tanzania": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "thailand": {
+    "population": "100K",
+    "last_letter": "D",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  },
+  "togo": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _"
+  },
+  "tonga": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "trinidad-and-tobago": {
+    "population": "100K",
+    "last_letter": "O",
+    "word_count": 3,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _"
+  },
+  "tunisia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "turkey": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "turkmenistan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _ _"
+  },
+  "tuvalu": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "uganda": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "ukraine": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "united-arab-emirates": {
+    "population": "100K",
+    "last_letter": "S",
+    "word_count": 3,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _      _ _ _ _      _ _ _ _ _ _ _ _"
+  },
+  "united-kingdom": {
+    "population": "67M",
+    "last_letter": "M",
+    "word_count": 2,
+    "capital": "London",
+    "word_size": "_ _ _ _ _ _      _ _ _ _ _ _ _"
+  },
+  "united-states-of-america": {
+    "population": "334M",
+    "last_letter": "A",
+    "word_count": 4,
+    "capital": "Washington, D.C.",
+    "word_size": "_ _ _ _ _ _      _ _ _ _ _ _      _ _      _ _ _ _ _ _ _"
+  },
+  "uruguay": {
+    "population": "100K",
+    "last_letter": "Y",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "uzbekistan": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _ _"
+  },
+  "vanuatu": {
+    "population": "100K",
+    "last_letter": "U",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "vatican-city": {
+    "population": "800",
+    "last_letter": "Y",
+    "word_count": 2,
+    "capital": "Vatican City",
+    "word_size": "_ _ _ _ _ _ _      _ _ _ _"
+  },
+  "venezuela": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _ _"
+  },
+  "vietnam": {
+    "population": "100K",
+    "last_letter": "M",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _"
+  },
+  "yemen": {
+    "population": "100K",
+    "last_letter": "N",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _"
+  },
+  "zambia": {
+    "population": "100K",
+    "last_letter": "A",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _"
+  },
+  "zimbabwe": {
+    "population": "100K",
+    "last_letter": "E",
+    "word_count": 1,
+    "capital": "Capital",
+    "word_size": "_ _ _ _ _ _ _ _"
+  }
+}
