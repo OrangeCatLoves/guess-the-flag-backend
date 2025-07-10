@@ -1,4 +1,5 @@
 const { Server } = require('socket.io');
+const db = require('./db'); // Adjust the path as necessary
 
 let io;
 
@@ -15,17 +16,25 @@ function initSocket(server) {
   io.on('connection', (socket) => {
     console.log(`✅ User connected: ${socket.id}`);
 
-    socket.on('register', ({ userId, username }) => {
-      onlineUsers.set(socket.id, { userId, username });
-      broadcastOnlineUsers();
-    });
-
-    socket.on('invite', ({ toUserId, from }) => {
-      const recipientSocket = [...onlineUsers.entries()]
-        .find(([_, u]) => u.userId === toUserId)?.[0];
-      if (recipientSocket) {
-        io.to(recipientSocket).emit('invite-received', from);
+    socket.on('register', async ({ userId, username, guest }) => {
+      let wins = 0;
+      if (!guest) {
+        // only query DB for real users
+        const { rows } = await db.query(
+          'SELECT duelvictories FROM users WHERE id = $1',
+          [userId]
+        );
+        wins = rows[0]?.duelvictories ?? 0;
       }
+      // store socketId so clients can filter themselves out
+      onlineUsers.set(socket.id, {
+        socketId:       socket.id,
+        userId,
+        username,
+        guest,
+        duelvictories:  wins
+      });
+      broadcastOnlineUsers();
     });
 
     socket.on('accept-invite', ({ toUserId, fromUserId }) => {

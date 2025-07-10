@@ -60,7 +60,7 @@ router.post('/login', loginLimiter, async (req, res) => {
 
   const payload = { userId: user.id, username: user.username, guest: false }
   const token = jwt.sign(payload, JWT_SECRET, { expiresIn:'7d' })
-  res.json({ token, displayName: user.username })
+  res.json({ token, displayName: user.username, userId: user.id, email: user.email })
 })
 
 // — POST /auth/guest
