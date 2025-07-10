@@ -30,6 +30,16 @@ router.post('/register', async (req, res) => {
     )
     res.status(201).json({ message: 'Account created' })
   } catch (err) {
+    // handle unique‐violation from Postgres
+    if (err.code === '23505') {
+      // which constraint?
+      if (err.constraint === 'users_email_key') {
+        return res.status(409).json({ error: 'That email is already registered.' })
+      }
+      if (err.constraint === 'users_username_key') {
+        return res.status(409).json({ error: 'That username is already taken.' })
+      }
+    }
     console.error('Registration error:', err);
     res.status(400).json({ error: 'Registration failed: ' + err.message });
   }

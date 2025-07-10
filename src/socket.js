@@ -49,6 +49,7 @@ function initSocket(server) {
 
 function broadcastOnlineUsers() {
   const users = [...onlineUsers.values()];
+  console.log('🔔 broadcasting', users.length, 'online users:', users)
   io.emit('online-users', users);
 }
 
