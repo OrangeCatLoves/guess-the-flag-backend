@@ -15,6 +15,7 @@ function initSocket(server) {
 
   io.on('connection', (socket) => {
     console.log(`✅ User connected: ${socket.id}`);
+    const ip = socket.handshake.address;
 
     socket.on('register', async ({ userId, username, guest }) => {
       let wins = 0;
@@ -46,6 +47,19 @@ function initSocket(server) {
         io.to(userASocket).emit('start-duel', { opponentId: fromUserId });
         io.to(userBSocket).emit('start-duel', { opponentId: toUserId });
       }
+    });
+
+     // Handle invite requests
+    socket.on('invite', ({ toSocketId }) => {
+      const sender = onlineUsers.get(socket.id);
+      if (!sender) return;
+      // Emit to the target socket an invitation event
+      io.to(toSocketId).emit('invite-received', {
+        socketId:       socket.id,
+        username:       sender.username,
+        guest:          sender.guest,
+        duelvictories:  sender.duelvictories
+      });
     });
 
     socket.on('disconnect', () => {
