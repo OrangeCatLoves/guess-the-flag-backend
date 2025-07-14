@@ -1,6 +1,7 @@
 const { Server } = require('socket.io');
 const { v4: uuidv4 } = require('uuid');
 const db = require('./db'); // Adjust the path as necessary
+const { getRandomFlag } = require('./game'); // Adjust the path as necessary
 
 let io;
 
@@ -63,17 +64,22 @@ function initSocket(server) {
       });
     });
 
-    socket.on('accept-invite', ({ inviterSocketId }) => {
-      // inviterSocketId = the socketId of the user who sent the invite
-      const roomId = uuidv4()
+    socket.on('accept-invite', async ({ inviterSocketId }) => {
+      // 1) Create a new session with a random flag
+      const sessionId = uuidv4();
+      const flag      = getRandomFlag();
+      await db.query(
+        'INSERT INTO sessions (id, flag_code, started_at) VALUES ($1, $2, NOW())',
+        [sessionId, flag.code]
+      );
 
-      // join both sockets to the room
-      socket.join(roomId)                               // acceptor
-      const inviterSocket = io.sockets.sockets.get(inviterSocketId)
-      if (inviterSocket) inviterSocket.join(roomId)     // inviter
+      // 2) Join both sockets into the session room
+      socket.join(sessionId); 
+      const inviterSocket = io.sockets.sockets.get(inviterSocketId);
+      if (inviterSocket) inviterSocket.join(sessionId);
 
-      // notify both clients they’re starting a duel
-      io.to(roomId).emit('start-duel', { roomId })
+      // 3) Notify both that the duel is starting, passing the sessionId
+      io.to(sessionId).emit('start-duel', { sessionId });
     })
 
     socket.on('disconnect', () => {

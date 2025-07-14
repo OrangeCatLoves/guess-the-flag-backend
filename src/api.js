@@ -5,27 +5,44 @@ const db      = require('./db');
 const { flags } = require('./game');
 
 router.get('/session/:id', async (req, res) => {
-  const { rows } = await db.query(
-    'SELECT * FROM sessions WHERE id=$1',
-    [req.params.id]
-  );
-  if (!rows.length) return res.status(404).json({ error: 'Not found' });
+  const id = req.params.id
 
-  const session = rows[0];
-  const meta = flags.find(f => f.code === session.flag_code);
+  // ← Guard: missing or literally "undefined" is a bad request
+  if (!id || id === 'undefined') {
+    return res.status(400).json({ error: 'Session ID is required' })
+  }
 
-  return res.json({
-    id: session.id,
-    flagCode: session.flag_code,
-    imagePath: meta.imagePath,
-    hints: meta.hints,
-    startedAt: session.started_at,
-    // if ended:
-    endedAt:   session.ended_at,
-    hintsUsed: session.hints_used,
-    correct:   session.correct,
-    score:     session.score
-  });
+  // Optional: further validate UUID format
+  if (!/^[0-9a-fA-F\\-]{36}$/.test(id)) {
+    return res.status(400).json({ error: 'Invalid session ID format' })
+  }
+
+  try {
+    const { rows } = await db.query(
+      'SELECT * FROM sessions WHERE id=$1',
+      [id]
+    )
+    if (!rows.length) {
+      return res.status(404).json({ error: 'Session not found' })
+    }
+
+    const session = rows[0]
+    const meta = flags.find(f => f.code === session.flag_code)
+    return res.json({
+      id:         session.id,
+      flagCode:   session.flag_code,
+      imagePath:  meta.imagePath,
+      hints:      meta.hints,
+      startedAt:  session.started_at,
+      endedAt:    session.ended_at,
+      hintsUsed:  session.hints_used,
+      correct:    session.correct,
+      score:      session.score
+    })
+  } catch (err) {
+    console.error('Session load error:', err)
+    return res.status(500).json({ error: 'Could not load session' })
+  }
 });
 
 router.post('/session/:id/guess', async (req, res) => {
