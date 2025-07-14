@@ -1,4 +1,5 @@
 const { Server } = require('socket.io');
+const { v4: uuidv4 } = require('uuid');
 const db = require('./db'); // Adjust the path as necessary
 
 let io;
@@ -61,6 +62,19 @@ function initSocket(server) {
         duelvictories:  sender.duelvictories
       });
     });
+
+    socket.on('accept-invite', ({ inviterSocketId }) => {
+      // inviterSocketId = the socketId of the user who sent the invite
+      const roomId = uuidv4()
+
+      // join both sockets to the room
+      socket.join(roomId)                               // acceptor
+      const inviterSocket = io.sockets.sockets.get(inviterSocketId)
+      if (inviterSocket) inviterSocket.join(roomId)     // inviter
+
+      // notify both clients they’re starting a duel
+      io.to(roomId).emit('start-duel', { roomId })
+    })
 
     socket.on('disconnect', () => {
       console.log(`❌ User disconnected: ${socket.id}`);
