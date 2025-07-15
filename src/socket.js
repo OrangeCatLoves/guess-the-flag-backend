@@ -1,7 +1,7 @@
 const { Server } = require('socket.io');
 const { v4: uuidv4 } = require('uuid');
 const db = require('./db'); // Adjust the path as necessary
-const { getRandomFlag } = require('./game'); // Adjust the path as necessary
+const { flags, getRandomFlag } = require('./game'); // Adjust the path as necessary
 
 let io;
 
@@ -67,8 +67,16 @@ function initSocket(server) {
     socket.on('accept-invite', async ({ inviterSocketId }) => {
       // generate session id
       const sessionId = uuidv4()
-      // pick 5 random flags upfront
-      const codes = Array.from({length:5}, () => getRandomFlag().code);
+      // 2) Pick 5 *distinct* random flags
+      //    a) grab all codes
+      const allCodes = flags.map(f => f.code);
+      //    b) shuffle them
+      for (let i = allCodes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allCodes[i], allCodes[j]] = [allCodes[j], allCodes[i]];
+      }
+      //    c) take the first five
+      const codes = allCodes.slice(0, 5);
 
       // insert them as JSONB array
       await db.query(
