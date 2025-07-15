@@ -65,20 +65,23 @@ function initSocket(server) {
     });
 
     socket.on('accept-invite', async ({ inviterSocketId }) => {
-      // 1) Create a new session with a random flag
-      const sessionId = uuidv4();
-      const flag      = getRandomFlag();
+      // generate session id
+      const sessionId = uuidv4()
+      // pick 5 random flags upfront
+      const codes = Array.from({length:5}, () => getRandomFlag().code);
+
+      // insert them as JSONB array
       await db.query(
-        'INSERT INTO sessions (id, flag_code, started_at) VALUES ($1, $2, NOW())',
-        [sessionId, flag.code]
+        `INSERT INTO sessions (id, flag_code, flag_codes, started_at)
+        VALUES ($1, $2, $3, NOW())`,
+        // flag_code stays the first one for backwards-compat
+        [sessionId, codes[0], JSON.stringify(codes)]
       );
 
-      // 2) Join both sockets into the session room
-      socket.join(sessionId); 
-      const inviterSocket = io.sockets.sockets.get(inviterSocketId);
-      if (inviterSocket) inviterSocket.join(sessionId);
-
-      // 3) Notify both that the duel is starting, passing the sessionId
+      // join room & notify both
+      socket.join(sessionId);
+      const inviter = io.sockets.sockets.get(inviterSocketId);
+      if (inviter) inviter.join(sessionId);
       io.to(sessionId).emit('start-duel', { sessionId });
     })
 
