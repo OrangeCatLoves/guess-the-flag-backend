@@ -108,91 +108,91 @@
     "population": "100K",
     "last_letter": "S",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Minsk",
     "word_size": "_ _ _ _ _ _ _"
   },
   "belgium": {
     "population": "100K",
     "last_letter": "M",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Brussels",
     "word_size": "_ _ _ _ _ _ _"
   },
   "belize": {
     "population": "100K",
     "last_letter": "E",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Belmopan",
     "word_size": "_ _ _ _ _ _"
   },
   "benin": {
     "population": "100K",
     "last_letter": "N",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Porto-Novo",
     "word_size": "_ _ _ _ _"
   },
   "bhutan": {
     "population": "100K",
     "last_letter": "N",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Thimphu",
     "word_size": "_ _ _ _ _ _"
   },
   "bolivia": {
     "population": "100K",
     "last_letter": "A",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Sucre",
     "word_size": "_ _ _ _ _ _ _"
   },
   "bosnia-and-herzegovina": {
     "population": "100K",
     "last_letter": "A",
     "word_count": 3,
-    "capital": "Capital",
+    "capital": "Sarajevo",
     "word_size": "_ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _ _ _ _ _"
   },
   "botswana": {
     "population": "100K",
     "last_letter": "A",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Gaborone",
     "word_size": "_ _ _ _ _ _ _ _"
   },
   "brazil": {
     "population": "100K",
     "last_letter": "L",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Brasilia",
     "word_size": "_ _ _ _ _ _"
   },
   "brunei": {
     "population": "100K",
     "last_letter": "I",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Bandar Seri Begawan",
     "word_size": "_ _ _ _ _ _"
   },
   "bulgaria": {
     "population": "100K",
     "last_letter": "A",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Sofia",
     "word_size": "_ _ _ _ _ _ _ _"
   },
   "burkina-faso": {
     "population": "100K",
     "last_letter": "O",
     "word_count": 2,
-    "capital": "Capital",
+    "capital": "Ouagadougou",
     "word_size": "_ _ _ _ _ _ _      _ _ _ _"
   },
   "burundi": {
     "population": "100K",
     "last_letter": "I",
     "word_count": 1,
-    "capital": "Capital",
+    "capital": "Gitega",
     "word_size": "_ _ _ _ _ _ _"
   },
   "cambodia": {
