@@ -1,13 +1,12 @@
-// src/socket.js
-const { Server } = require('socket.io')
+const { Server }   = require('socket.io')
 const { v4: uuidv4 } = require('uuid')
-const db = require('./db')
+const db            = require('./db')
 const { flags, getRandomFlag } = require('./game')
 
-const ROUND_DURATION = 25  // seconds
+const ROUND_DURATION = 25 * 1000 // milliseconds
 // track running score per session
-const sessionScores = new Map()       // sessionId -> Map<socketId,score>
-const onlineUsers   = new Map()       // socketId -> { socketId, userId, username, guest, duelvictories }
+const sessionScores = new Map()       // sessionId → Map<socketId, score>
+const onlineUsers   = new Map()       // socketId → user info
 
 let io
 function initSocket(server) {
@@ -18,7 +17,7 @@ function initSocket(server) {
   io.on('connection', socket => {
     console.log(`✅ User connected: ${socket.id}`)
 
-    // 1) registration:
+    // 1) registration
     socket.on('register', async ({ userId, username, guest }) => {
       let wins = 0
       if (!guest) {
@@ -32,7 +31,7 @@ function initSocket(server) {
       broadcastOnlineUsers()
     })
 
-    // 2) invitation to duel:
+    // 2) invite someone
     socket.on('invite', ({ toSocketId }) => {
       const sender = onlineUsers.get(socket.id)
       if (!sender) return
@@ -44,7 +43,7 @@ function initSocket(server) {
       })
     })
 
-    // 3) accept invite and start duel:
+    // 3) accept invite → start duel
     socket.on('accept-invite', async ({ inviterSocketId }) => {
       // pick five distinct flags
       const allCodes = flags.map(f => f.code)
@@ -54,37 +53,38 @@ function initSocket(server) {
       }
       const codes = allCodes.slice(0, 5)
 
-      // new session
+      // create session row
       const sessionId = uuidv4()
       await db.query(
         `INSERT INTO sessions (id, flag_code, flag_codes, started_at)
          VALUES ($1, $2, $3, NOW())`,
         [sessionId, codes[0], JSON.stringify(codes)]
       )
-      // init score map
+
+      // init in-memory score tracker
       sessionScores.set(sessionId, new Map())
 
-      // join room
+      // join both players to room
       socket.join(sessionId)
       const inviter = io.sockets.sockets.get(inviterSocketId)
       if (inviter) inviter.join(sessionId)
 
-      // notify both
+      // kickoff
       io.to(sessionId).emit('start-duel', { sessionId })
 
-      // schedule game-over broadcast after all 5 rounds
+      // schedule game-over after all rounds
       setTimeout(() => {
         const scoresMap = sessionScores.get(sessionId) || new Map()
         const members   = Array.from(io.sockets.adapter.rooms.get(sessionId) || [])
         if (members.length < 2) return
 
-        const [a,b]    = members
-        const userA    = onlineUsers.get(a)
-        const userB    = onlineUsers.get(b)
-        const scoreA   = scoresMap.get(a) || 0
-        const scoreB   = scoresMap.get(b) || 0
+        const [a, b]     = members
+        const userA      = onlineUsers.get(a)
+        const userB      = onlineUsers.get(b)
+        const scoreA     = scoresMap.get(a) || 0
+        const scoreB     = scoresMap.get(b) || 0
 
-        // emit personalized result to each
+        // send each their personalized result
         io.to(a).emit('game-over', {
           you:      { name: userA.username, score: scoreA },
           opponent: { name: userB.username, score: scoreB }
@@ -95,37 +95,35 @@ function initSocket(server) {
         })
 
         sessionScores.delete(sessionId)
-      }, ROUND_DURATION * 1000 * 5 + 500)
+      }, ROUND_DURATION * 5 + 500)
     })
 
-    // 4) handle client-side guess submissions
-    socket.on('submit-guess', ({ sessionId, round, guess, hintsUsed, timeLeft }) => {
+    // 4) handle guess submission
+    socket.on('submit-guess', ({ sessionId, guess, hintsUsed, timeLeft }) => {
       const scoresMap = sessionScores.get(sessionId)
       if (!scoresMap) return
 
-      // make sure hintsUsed is an array
-      const usedArr = Array.isArray(hintsUsed) ? hintsUsed : []
+      // calculate hint‐penalty
+      const penalties = [150, 300, 750]
+      const count     = Math.min(Number(hintsUsed) || 0, penalties.length)
+      const hintPenalty = penalties.slice(0, count).reduce((s,p) => s + p, 0)
 
-      // compute hint penalty
-      const penalties   = [150, 300, 750]
-      const hintPenalty = usedArr.reduce((sum, _, i) => sum + (penalties[i] || 0), 0)
-
-      // compute base & points
+      // base and time‐fraction
       const base = Math.max(1500 - hintPenalty, 0)
-      const pts  = Math.floor(base * (timeLeft / ROUND_DURATION))
+      const pts  = Math.floor(base * (timeLeft / (ROUND_DURATION/1000)))
 
-      // update this socket’s total
-      const prev     = scoresMap.get(socket.id) || 0
+      // update running total
+      const prev = scoresMap.get(socket.id) || 0
       scoresMap.set(socket.id, prev + pts)
 
-      // notify back
+      // send back updated total for *this* player
       socket.emit('score-update', {
         socketId:   socket.id,
         totalScore: scoresMap.get(socket.id)
       })
     })
 
-    // 5) disconnect
+    // 5) cleanup on disconnect
     socket.on('disconnect', () => {
       onlineUsers.delete(socket.id)
       broadcastOnlineUsers()
