@@ -4,7 +4,10 @@ const db            = require('./db')
 const { flags, getRandomFlag } = require('./game')
 
 const ROUND_DURATION = 25 * 1000 // milliseconds
-// track running score per session
+// track which 5 flags each session uses
+const sessionFlags     = new Map() // sessionId → [code0, code1, …code4]
+// track hint‑usage per round
+const sessionHintUsage = new Map() // sessionId → Map<socketId, { round: n, used: [hint…] }>
 const sessionScores = new Map()       // sessionId → Map<socketId, score>
 const onlineUsers   = new Map()       // socketId → user info
 
@@ -55,6 +58,7 @@ function initSocket(server) {
 
       // create session row
       const sessionId = uuidv4()
+      sessionFlags.set(sessionId, codes)
       await db.query(
         `INSERT INTO sessions (id, flag_code, flag_codes, started_at)
          VALUES ($1, $2, $3, NOW())`,
@@ -98,7 +102,63 @@ function initSocket(server) {
       }, ROUND_DURATION * 5 + 500)
     })
 
-    // 4) handle guess submission
+    // handle hint‐requests from clients
+    socket.on('use-hint', ({ sessionId, round }) => {
+      // 1) grab your 5‐flags array:
+      const codes = sessionFlags.get(sessionId) || [];
+      const idx   = round - 1;
+      if (idx < 0 || idx >= codes.length) {
+        return socket.emit('hint‑selected', { error: 'Invalid round' });
+      }
+
+      // 2) find that flag’s metadata
+      const code = codes[idx];
+      const meta = flags.find(f => f.code === code) || {};
+
+      // 3) convert the meta.hints object into an array of strings:
+      const raw = meta.hints || {};
+      const allHints = [];
+      if (raw.population)     allHints.push(`Population: ${raw.population}`);
+      if (raw.last_letter)    allHints.push(`Last letter: ${raw.last_letter}`);
+      if (raw.word_count != null) allHints.push(`Word count: ${raw.word_count}`);
+      if (raw.capital)        allHints.push(`Capital: ${raw.capital}`);
+      if (raw.word_size)      allHints.push(`Word size: ${raw.word_size}`);
+
+      // 4) per‑session usage map (socketId → { round, used[] })
+      let perSession = sessionHintUsage.get(sessionId);
+      if (!perSession) {
+        perSession = new Map();
+        sessionHintUsage.set(sessionId, perSession);
+      }
+
+      // 5) get or reset *this player*’s usage for *this* round
+      let usage = perSession.get(socket.id);
+      if (!usage || usage.round !== round) {
+        usage = { round, used: [] };
+        perSession.set(socket.id, usage);
+      }
+
+      // 6) enforce max 3 hints
+      if (usage.used.length >= 3) {
+        return socket.emit('hint-selected', { error: 'No hints left' });
+      }
+
+      // 7) pick a random unused hint
+      const avail = allHints.filter(h => !usage.used.includes(h));
+      if (!avail.length) {
+        return socket.emit('hint-selected', { error: 'No hints left' });
+      }
+      const pick = avail[Math.floor(Math.random() * avail.length)];
+      usage.used.push(pick);
+
+      // 8) send it back
+      socket.emit('hint-selected', {
+        hint:      pick,
+        usedCount: usage.used.length
+      });
+    });
+
+    // handle guess submission
     socket.on('submit-guess', ({ sessionId, guess, hintsUsed, timeLeft }) => {
       const scoresMap = sessionScores.get(sessionId)
       if (!scoresMap) return
