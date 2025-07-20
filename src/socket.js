@@ -281,6 +281,9 @@ function initSocket(server) {
         socketId:   socket.id,
         totalScore: scoresMap.get(clientId)
       });
+
+      // notify opponent of correct submission
+      socket.to(sessionId).emit('opponent-correct');
     });
 
     // 6) cleanup
