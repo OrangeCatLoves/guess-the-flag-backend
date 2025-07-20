@@ -7,14 +7,14 @@ const { flags } = require('./game')
 const ROUND_DURATION = 25 * 1000 // ms per round
 
 // In‑memory stores
-const sessionFlags      = new Map() // sessionId → [flagCodes]
-const sessionHintUsage  = new Map() // sessionId → Map<clientId,{ round, used:[] }>
-const sessionScores     = new Map() // sessionId → Map<clientId,score>
-const sessionSubs       = new Map() // sessionId → Map<clientId,Set<round>>
+const sessionFlags = new Map() // sessionId → [flagCodes]
+const sessionHintUsage = new Map() // sessionId → Map<clientId,{ round, used:[] }>
+const sessionScores = new Map() // sessionId → Map<clientId,score>
+const sessionSubs = new Map() // sessionId → Map<clientId,Set<round>>
 const sessionStartTimes = new Map() // sessionId → timestamp
-const sessionIntervals  = new Map() // sessionId → interval ID
-const onlineUsers       = new Map() // socketId → user info
-const socketToClient    = new Map() // socketId → clientId
+const sessionIntervals = new Map() // sessionId → interval ID
+const onlineUsers = new Map() // socketId → user info
+const socketToClient = new Map() // socketId → clientId
 
 let io
 function initSocket(server) {
