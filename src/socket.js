@@ -25,9 +25,7 @@ function initSocket(server) {
   io.on('connection', socket => {
     console.log(`✅ User connected: ${socket.id}`)
 
-    //
     // 0) Re-join + rehydrate on refresh
-    //
     socket.on('join-session', ({ sessionId, clientId }) => {
       if (!sessionFlags.has(sessionId)) return
 
