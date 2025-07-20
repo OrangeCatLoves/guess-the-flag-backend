@@ -1,8 +1,8 @@
 // src/socket.js
-const { Server }     = require('socket.io')
+const { Server } = require('socket.io')
 const { v4: uuidv4 } = require('uuid')
-const db             = require('./db')
-const { flags }      = require('./game')
+const db = require('./db')
+const { flags } = require('./game')
 
 const ROUND_DURATION = 25 * 1000 // ms per round
 
