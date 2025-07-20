@@ -4,14 +4,16 @@
     "last_letter": "N",
     "word_count": 1,
     "capital": "Kabul",
-    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "albania": {
     "population": "2.8M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Tirana",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "algeria": {
     "population": "45M",
@@ -26,14 +28,16 @@
     "last_letter": "A",
     "word_count": 1,
     "capital": "Andorra la Vella",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "angola": {
     "population": "36M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Luanda",
-    "word_size": "_ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _",
+    "first_letter": "A"
   },
   "antigua-and-barbuda": {
     "population": "99K",
