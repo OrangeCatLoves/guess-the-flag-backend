@@ -231,42 +231,57 @@ function initSocket(server) {
     })
 
 
-    // 5) handle guess submissions
-    // handle guess submissions
+    // 5) handle guess submissions with validation & retry
     socket.on('submit-guess', ({ sessionId, guess, hintsUsed, timeLeft, round }) => {
-      const scoresMap = sessionScores.get(sessionId)
-      if (!scoresMap) return
+      const scoresMap = sessionScores.get(sessionId);
+      if (!scoresMap) return;
 
-      // calculate hint‑penalty
-      const penalties   = [150, 300, 750]
-      const count       = Math.min(Number(hintsUsed) || 0, penalties.length)
-      const hintPenalty = penalties.slice(0, count).reduce((s, p) => s + p, 0)
+      // determine which flag code
+      const codes = sessionFlags.get(sessionId) || [];
+      const idx = round - 1;
+      if (idx < 0 || idx >= codes.length) return;
+      const code = codes[idx];
+      const meta = flags.find(f => f.code === code);
+      if (!meta) return;
 
-      // base and time‑fraction
-      const base = Math.max(1500 - hintPenalty, 0)
-      const pts  = Math.floor(base * (timeLeft / (ROUND_DURATION/1000)))
-
-      // update score
-      const clientId = socketToClient.get(socket.id)
-      const prev     = scoresMap.get(clientId) || 0
-      scoresMap.set(clientId, prev + pts)
-
-      // track that this client has submitted this round
-      const subsMap = sessionSubs.get(sessionId)
-      if (subsMap) {
-        let subs = subsMap.get(clientId)
-        if (!subs) {
-          subs = new Set()
-          subsMap.set(clientId, subs)
-        }
-        subs.add(round)                // ← now `round` is defined
+      // normalize and check against accepted answers
+      const normalized = guess.trim().toLowerCase();
+      const isCorrect = meta.answers.some(a =>
+        a.toLowerCase() === normalized
+      );
+      if (!isCorrect) {
+        return socket.emit('incorrect-guess');
       }
 
+      // prevent double-scoring on correct
+      const clientId = socketToClient.get(socket.id);
+      const subsMap  = sessionSubs.get(sessionId)   || new Map();
+      let subs       = subsMap.get(clientId)        || new Set();
+      if (subs.has(round)) return;  // already scored
+
+      // calculate hint penalty
+      const penalties = [150,300,750];
+      const count     = Math.min(Number(hintsUsed)||0, penalties.length);
+      const hintPenalty = penalties.slice(0,count).reduce((s,p)=>s+p,0);
+
+      // base and time-fraction
+      const base = Math.max(1500 - hintPenalty, 0);
+      const pts  = Math.floor(base * (timeLeft / (ROUND_DURATION/1000)));
+
+      // update score
+      const prevScore = scoresMap.get(clientId) || 0;
+      scoresMap.set(clientId, prevScore + pts);
+
+      // mark this round submitted
+      subs.add(round);
+      subsMap.set(clientId, subs);
+
+      // notify client of new total
       socket.emit('score-update', {
         socketId:   socket.id,
         totalScore: scoresMap.get(clientId)
-      })
-    })
+      });
+    });
 
     // 6) cleanup
     socket.on('disconnect', () => {
