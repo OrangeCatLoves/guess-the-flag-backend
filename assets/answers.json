@@ -110,61 +110,43 @@
   ],
   "cape-verde": [
     "Cabo Verde",
-    "Republic of Cabo Verde",
-    "CV",
-    "CPV"
+    "Cape Verde",
+    "Republic of Cabo Verde"
   ],
   "cambodia": [
     "Cambodia",
-    "Kingdom of Cambodia",
-    "KH",
-    "KHM"
+    "Kingdom of Cambodia"
   ],
   "cameroon": [
     "Cameroon",
-    "Republic of Cameroon",
-    "CM",
-    "CMR"
+    "Republic of Cameroon"
   ],
   "canada": [
-    "Canada",
-    "CA",
-    "CAN"
+    "Canada"
   ],
   "central-african-republic": [
-    "Central African Republic",
-    "CF",
-    "CAF"
+    "Central African Republic"
   ],
   "chad": [
     "Chad",
-    "Republic of Chad",
-    "TD",
-    "TCD"
+    "Republic of Chad"
   ],
   "chile": [
     "Chile",
-    "Republic of Chile",
-    "CL",
-    "CHL"
+    "Republic of Chile"
   ],
   "china": [
     "China",
     "People's Republic of China",
-    "CN",
-    "CHN"
+    "Republic of China"
   ],
   "colombia": [
     "Colombia",
-    "Republic of Colombia",
-    "CO",
-    "COL"
+    "Republic of Colombia"
   ],
   "comoros": [
     "Comoros",
-    "Union of the Comoros",
-    "KM",
-    "COM"
+    "Union of the Comoros"
   ],
   "congo": [
     "Congo",
@@ -179,39 +161,30 @@
   ],
   "costa-rica": [
     "Costa Rica",
-    "Republic of Costa Rica",
-    "CR",
-    "CRI"
+    "Republic of Costa Rica"
   ],
   "croatia": [
     "Croatia",
-    "Republic of Croatia",
-    "HR",
-    "HRV"
+    "Republic of Croatia"
   ],
-  "cte-divoire": [
+  "cote-d'voire": [
     "Côte d'Ivoire",
+    "Cote d'Ivoire",
+    "Ivory Coast",
     "Republic of Côte d'Ivoire",
-    "CI",
-    "CIV"
+    "Republic of Cote d'Ivoire"
   ],
   "cuba": [
     "Cuba",
-    "Republic of Cuba",
-    "CU",
-    "CUB"
+    "Republic of Cuba"
   ],
   "cyprus": [
     "Cyprus",
-    "Republic of Cyprus",
-    "CY",
-    "CYP"
+    "Republic of Cyprus"
   ],
   "czechia": [
     "Czechia",
-    "Czech Republic",
-    "CZ",
-    "CZE"
+    "Czech Republic"
   ],
   "denmark": [
     "Denmark",
