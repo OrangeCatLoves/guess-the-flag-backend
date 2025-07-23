@@ -15,6 +15,8 @@ const sessionStartTimes = new Map() // sessionId → timestamp
 const sessionIntervals = new Map() // sessionId → interval ID
 const onlineUsers = new Map() // socketId → user info
 const socketToClient = new Map() // socketId → clientId
+const socketSession     = new Map() // socketId → sessionId
+const pendingDisconnects = new Map(); // clientId -> timeoutId
 
 let io
 function initSocket(server) {
@@ -31,6 +33,14 @@ function initSocket(server) {
 
       socket.join(sessionId)
       socketToClient.set(socket.id, clientId)
+      socketSession.set(socket.id, sessionId)
+
+      // CANCEL pending opponent-left if this was just a refresh
+      const t = pendingDisconnects.get(clientId);
+      if (t) {
+        clearTimeout(t);
+        pendingDisconnects.delete(clientId);
+      }
 
       // emit current timer
       const startTs = sessionStartTimes.get(sessionId)
@@ -122,9 +132,12 @@ function initSocket(server) {
 
       // join both
       socket.join(sessionId)
+      socketSession.set(socket.id, sessionId)
       const inviter = io.sockets.sockets.get(inviterSocketId)
-      if (inviter) inviter.join(sessionId)
-
+      if (inviter) {
+        inviter.join(sessionId)
+        socketSession.set(inviterSocketId, sessionId)
+      }
       // notify start
       io.to(sessionId).emit('start-duel', { sessionId })
 
@@ -286,9 +299,32 @@ function initSocket(server) {
 
     // 6) cleanup
     socket.on('disconnect', () => {
-      onlineUsers.delete(socket.id)
-      socketToClient.delete(socket.id)
-      broadcastOnlineUsers()
+      const clientId  = socketToClient.get(socket.id);
+      const sessionId = socketSession.get(socket.id);
+
+      // Clean per-socket maps
+      onlineUsers.delete(socket.id);
+      socketToClient.delete(socket.id);
+      socketSession.delete(socket.id);
+      broadcastOnlineUsers();
+
+      if (!sessionId || !clientId) return;
+
+      // Grace delay (ms)
+      const GRACE_MS = 3000;
+
+      const timeoutId = setTimeout(() => {
+        // check if client rejoined (pending cleared means they did)
+        if (pendingDisconnects.has(clientId)) {
+          pendingDisconnects.delete(clientId);
+
+          // still in session? then notify the room
+          socket.to(sessionId).emit('opponent-left');
+          // (optional) you may also perform cleanup here if you want to end the session early
+        }
+      }, GRACE_MS);
+
+      pendingDisconnects.set(clientId, timeoutId);
     })
   })
 }
