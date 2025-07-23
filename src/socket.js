@@ -3,6 +3,7 @@ const { Server } = require('socket.io')
 const { v4: uuidv4 } = require('uuid')
 const db = require('./db')
 const { flags } = require('./game')
+const { registerSoloHandlers } = require('./soloSocket')
 
 const ROUND_DURATION = 25 * 1000 // ms per round
 
@@ -327,6 +328,8 @@ function initSocket(server) {
       pendingDisconnects.set(clientId, timeoutId);
     })
   })
+  registerSoloHandlers(io);
+  return io;
 }
 
 function broadcastOnlineUsers() {

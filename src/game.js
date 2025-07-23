@@ -22,8 +22,11 @@ const flags = fs.readdirSync(flagsDir).map(f => {
   };
 });
 
+// add a map for quick by-code lookup
+const flagsByCode = new Map(flags.map(f => [f.code, f]));
+
 function getRandomFlag() {
   return flags[Math.floor(Math.random() * flags.length)];
 }
 
-module.exports = { getRandomFlag, flags };
+module.exports = { getRandomFlag, flags, flagsByCode };
