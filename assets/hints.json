@@ -4,77 +4,88 @@
     "last_letter": "N",
     "word_count": 1,
     "capital": "Kabul",
-    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "albania": {
     "population": "2.8M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Tirana",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "algeria": {
     "population": "45M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Algiers",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "andorra": {
     "population": "79K",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Andorra la Vella",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "angola": {
     "population": "36M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Luanda",
-    "word_size": "_ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _",
+    "first_letter": "A"
   },
   "antigua-and-barbuda": {
     "population": "99K",
     "last_letter": "A",
     "word_count": 3,
     "capital": "Saint John's",
-    "word_size": "_ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "argentina": {
     "population": "46M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Buenos Aires",
-    "word_size": "_ _ _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "armenia": {
     "population": "2.8M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Yerevan",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "australia": {
     "population": "26.5M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Canberra",
-    "word_size": "_ _ _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "austria": {
     "population": "9M",
     "last_letter": "A",
     "word_count": 1,
     "capital": "Vienna",
-    "word_size": "_ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "azerbaijan": {
     "population": "10.3M",
     "last_letter": "N",
     "word_count": 1,
     "capital": "Baku",
-    "word_size": "_ _ _ _ _ _ _ _ _ _"
+    "word_size": "_ _ _ _ _ _ _ _ _ _",
+    "first_letter": "A"
   },
   "bahamas": {
     "population": "410K",
