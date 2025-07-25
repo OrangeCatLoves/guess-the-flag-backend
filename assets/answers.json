@@ -485,376 +485,258 @@
   ],
   "nauru": [
     "Nauru",
-    "Republic of Nauru",
-    "NR",
-    "NRU"
+    "Republic of Nauru"
   ],
   "nepal": [
     "Nepal",
-    "Federal Democratic Republic of Nepal",
-    "NP",
-    "NPL"
+    "Federal Democratic Republic of Nepal"
   ],
   "netherlands": [
     "Netherlands",
-    "Kingdom of the Netherlands",
-    "NL",
-    "NLD"
+    "Kingdom of the Netherlands"
   ],
   "new-zealand": [
-    "New Zealand",
-    "NZ",
-    "NZL"
+    "New Zealand"
   ],
   "nicaragua": [
     "Nicaragua",
-    "Republic of Nicaragua",
-    "NI",
-    "NIC"
+    "Republic of Nicaragua"
   ],
   "niger": [
     "Niger",
     "Republic of the Niger",
-    "NE",
-    "NER"
+    "Nigga",
+    "Nigger"
   ],
   "nigeria": [
     "Nigeria",
-    "Federal Republic of Nigeria",
-    "NG",
-    "NGA"
+    "Federal Republic of Nigeria"
   ],
   "north-macedonia": [
     "North Macedonia",
-    "Republic of North Macedonia",
-    "MK",
-    "MKD"
+    "Republic of North Macedonia"
   ],
   "norway": [
     "Norway",
-    "Kingdom of Norway",
-    "NO",
-    "NOR"
+    "Kingdom of Norway"
   ],
   "oman": [
     "Oman",
-    "Sultanate of Oman",
-    "OM",
-    "OMN"
+    "Sultanate of Oman"
   ],
   "pakistan": [
     "Pakistan",
-    "Islamic Republic of Pakistan",
-    "PK",
-    "PAK"
+    "Islamic Republic of Pakistan"
   ],
   "palau": [
     "Palau",
-    "Republic of Palau",
-    "PW",
-    "PLW"
+    "Republic of Palau"
   ],
   "panama": [
     "Panama",
-    "Republic of Panama",
-    "PA",
-    "PAN"
+    "Republic of Panama"
   ],
   "papua-new-guinea": [
     "Papua New Guinea",
-    "Independent State of Papua New Guinea",
-    "PG",
-    "PNG"
+    "Independent State of Papua New Guinea"
   ],
   "paraguay": [
     "Paraguay",
-    "Republic of Paraguay",
-    "PY",
-    "PRY"
+    "Republic of Paraguay"
   ],
   "peru": [
     "Peru",
-    "Republic of Peru",
-    "PE",
-    "PER"
+    "Republic of Peru"
   ],
   "philippines": [
     "Philippines",
-    "Republic of the Philippines",
-    "PH",
-    "PHL"
+    "Republic of the Philippines"
   ],
   "poland": [
     "Poland",
-    "Republic of Poland",
-    "PL",
-    "POL"
+    "Republic of Poland"
   ],
   "portugal": [
     "Portugal",
     "Portuguese Republic",
-    "PT",
-    "PRT"
+    "Republic of Portugal"
   ],
   "qatar": [
     "Qatar",
-    "State of Qatar",
-    "QA",
-    "QAT"
+    "State of Qatar"
   ],
   "romania": [
-    "Romania",
-    "RO",
-    "ROU"
+    "Romania"
   ],
-  "russian-federation": [
-    "Russian Federation",
-    "RU",
-    "RUS"
+  "russia": [
+    "Russia",
+    "Russian Federation"
   ],
   "rwanda": [
     "Rwanda",
     "Rwandese Republic",
-    "RW",
-    "RWA"
+    "Republic of Rwanda"
   ],
   "saint-kitts-and-nevis": [
     "Saint Kitts and Nevis",
-    "KN",
-    "KNA"
+    "Federation of Saint Kitts and Nevis",
+    "Federation of Saint Christopher and Nevis"
   ],
   "saint-lucia": [
-    "Saint Lucia",
-    "LC",
-    "LCA"
+    "Saint Lucia"
   ],
   "saint-vincent-and-the-grenadines": [
-    "Saint Vincent and the Grenadines",
-    "VC",
-    "VCT"
+    "Saint Vincent and the Grenadines"
   ],
   "samoa": [
     "Samoa",
-    "Independent State of Samoa",
-    "WS",
-    "WSM"
+    "Independent State of Samoa"
   ],
   "san-marino": [
     "San Marino",
-    "Republic of San Marino",
-    "SM",
-    "SMR"
+    "Republic of San Marino"
   ],
   "sao-tome-and-principe": [
     "Sao Tome and Principe",
-    "Democratic Republic of Sao Tome and Principe",
-    "ST",
-    "STP"
+    "Democratic Republic of Sao Tome and Principe"
   ],
   "saudi-arabia": [
     "Saudi Arabia",
-    "Kingdom of Saudi Arabia",
-    "SA",
-    "SAU"
+    "Kingdom of Saudi Arabia"
   ],
   "senegal": [
     "Senegal",
-    "Republic of Senegal",
-    "SN",
-    "SEN"
+    "Republic of Senegal"
   ],
   "serbia": [
     "Serbia",
-    "Republic of Serbia",
-    "RS",
-    "SRB"
+    "Republic of Serbia"
   ],
   "seychelles": [
     "Seychelles",
-    "Republic of Seychelles",
-    "SC",
-    "SYC"
+    "Republic of Seychelles"
   ],
   "sierra-leone": [
     "Sierra Leone",
-    "Republic of Sierra Leone",
-    "SL",
-    "SLE"
+    "Republic of Sierra Leone"
   ],
   "singapore": [
     "Singapore",
-    "Republic of Singapore",
-    "SG",
-    "SGP"
+    "Republic of Singapore"
   ],
   "slovakia": [
     "Slovakia",
-    "Slovak Republic",
-    "SK",
-    "SVK"
+    "Slovak Republic"
   ],
   "slovenia": [
     "Slovenia",
-    "Republic of Slovenia",
-    "SI",
-    "SVN"
+    "Republic of Slovenia"
   ],
   "solomon-islands": [
-    "Solomon Islands",
-    "SB",
-    "SLB"
+    "Solomon Islands"
   ],
   "somalia": [
     "Somalia",
-    "Federal Republic of Somalia",
-    "SO",
-    "SOM"
+    "Federal Republic of Somalia"
   ],
   "south-africa": [
     "South Africa",
-    "Republic of South Africa",
-    "ZA",
-    "ZAF"
+    "Republic of South Africa"
   ],
   "south-sudan": [
     "South Sudan",
-    "Republic of South Sudan",
-    "SS",
-    "SSD"
+    "Republic of South Sudan"
   ],
   "spain": [
     "Spain",
-    "Kingdom of Spain",
-    "ES",
-    "ESP"
+    "Kingdom of Spain"
   ],
   "sri-lanka": [
     "Sri Lanka",
-    "Democratic Socialist Republic of Sri Lanka",
-    "LK",
-    "LKA"
+    "Democratic Socialist Republic of Sri Lanka"
   ],
   "sudan": [
     "Sudan",
-    "Republic of the Sudan",
-    "SD",
-    "SDN"
+    "Republic of the Sudan"
   ],
   "suriname": [
     "Suriname",
-    "Republic of Suriname",
-    "SR",
-    "SUR"
+    "Republic of Suriname"
   ],
   "sweden": [
     "Sweden",
-    "Kingdom of Sweden",
-    "SE",
-    "SWE"
+    "Kingdom of Sweden"
   ],
   "switzerland": [
     "Switzerland",
-    "Swiss Confederation",
-    "CH",
-    "CHE"
+    "Swiss Confederation"
   ],
-  "syrian-arab-republic": [
-    "Syrian Arab Republic",
-    "SY",
-    "SYR"
+  "syria": [
+    "Syria",
+    "Syrian Arab Republic"
   ],
   "taiwan": [
     "Taiwan",
-    "Republic of China",
-    "ROC",
-    "Taiwan Province of China",
-    "Chinese Taipei"
+    "Republic of China"
   ],
   "tajikistan": [
     "Tajikistan",
-    "Republic of Tajikistan",
-    "TJ",
-    "TJK"
+    "Republic of Tajikistan"
   ],
-  "tanzania-united-republic-of": [
-    "Tanzania, United Republic of",
-    "United Republic of Tanzania",
-    "TZ",
-    "TZA"
+  "tanzania": [
+    "Tanzania",
+    "United Republic of Tanzania"
   ],
   "thailand": [
     "Thailand",
-    "Kingdom of Thailand",
-    "TH",
-    "THA"
+    "Kingdom of Thailand"
   ],
-  "timorleste": [
+  "timor-leste": [
     "Timor-Leste",
+    "Timor Leste",
     "Democratic Republic of Timor-Leste",
-    "TL",
-    "TLS"
+    "Democratic Republic of Timor Leste"
   ],
   "togo": [
     "Togo",
-    "Togolese Republic",
-    "TG",
-    "TGO"
+    "Togolese Republic"
   ],
   "tonga": [
     "Tonga",
-    "Kingdom of Tonga",
-    "TO",
-    "TON"
+    "Kingdom of Tonga"
   ],
   "trinidad-and-tobago": [
     "Trinidad and Tobago",
-    "Republic of Trinidad and Tobago",
-    "TT",
-    "TTO"
+    "Republic of Trinidad and Tobago"
   ],
   "tunisia": [
     "Tunisia",
-    "Republic of Tunisia",
-    "TN",
-    "TUN"
+    "Republic of Tunisia"
   ],
   "turkey": [
     "Turkey",
-    "Republic of Turkey",
-    "TR",
-    "TUR"
+    "Republic of Turkey"
   ],
   "turkmenistan": [
-    "Turkmenistan",
-    "TM",
-    "TKM"
+    "Turkmenistan"
   ],
   "tuvalu": [
-    "Tuvalu",
-    "TV",
-    "TUV"
+    "Tuvalu"
   ],
   "uganda": [
     "Uganda",
-    "Republic of Uganda",
-    "UG",
-    "UGA"
+    "Republic of Uganda"
   ],
   "ukraine": [
-    "Ukraine",
-    "UA",
-    "UKR"
+    "Ukraine"
   ],
   "united-arab-emirates": [
     "United Arab Emirates",
-    "AE",
-    "ARE"
+    "UAE"
   ],
   "united-kingdom": [
     "United Kingdom",
-    "United Kingdom of Great Britain and Northern Ireland",
-    "GB",
-    "GBR"
+    "United Kingdom of Great Britain and Northern Ireland"
   ],
   "united-states": [
     "United States",
@@ -864,50 +746,35 @@
   ],
   "uruguay": [
     "Uruguay",
-    "Eastern Republic of Uruguay",
-    "UY",
-    "URY"
+    "Oriental Republic of Uruguay"
   ],
   "uzbekistan": [
     "Uzbekistan",
-    "Republic of Uzbekistan",
-    "UZ",
-    "UZB"
+    "Republic of Uzbekistan"
   ],
   "vanuatu": [
     "Vanuatu",
-    "Republic of Vanuatu",
-    "VU",
-    "VUT"
+    "Republic of Vanuatu"
   ],
   "venezuela": [
-    "Venezuela, Bolivarian Republic of",
+    "Venezuela",
     "Bolivarian Republic of Venezuela",
-    "VE",
-    "VEN"
+    "Republic of Venezuela"
   ],
-  "viet-nam": [
-    "Viet Nam",
-    "Socialist Republic of Viet Nam",
-    "VN",
-    "VNM"
+  "vietnam": [
+    "Vietnam",
+    "Socialist Republic of Vietnam"
   ],
   "yemen": [
     "Yemen",
-    "Republic of Yemen",
-    "YE",
-    "YEM"
+    "Republic of Yemen"
   ],
   "zambia": [
     "Zambia",
-    "Republic of Zambia",
-    "ZM",
-    "ZMB"
+    "Republic of Zambia"
   ],
   "zimbabwe": [
     "Zimbabwe",
-    "Republic of Zimbabwe",
-    "ZW",
-    "ZWE"
+    "Republic of Zimbabwe"
   ]
 }
