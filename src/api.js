@@ -108,4 +108,53 @@ router.post('/session/:id/guess', async (req, res) => {
   res.json({ correct, score });
 });
 
+router.get('/leaderboard/solo', async (req, res) => {
+  const page  = Math.max(parseInt(req.query.page,10)||1,1)
+  const limit = 50, offset = (page-1)*limit
+
+  try {
+    // 1) total count
+    const totalRes = await db.query(`SELECT COUNT(*) FROM users`)
+    const total = parseInt(totalRes.rows[0].count, 10)
+
+    // 2) page of entries
+    const { rows: entries } = await db.query(
+      `SELECT username, bestsoloscore, lastbestsoloscore
+         FROM users
+        ORDER BY bestsoloscore DESC
+        LIMIT $1 OFFSET $2`,
+      [limit, offset]
+    )
+
+    res.json({ page, total, entries })
+  } catch (err) {
+    console.error('Solo leaderboard error', err)
+    res.status(500).json({ error: 'Could not load solo leaderboard' })
+  }
+})
+
+// GET /api/leaderboard/duel?page=N
+router.get('/leaderboard/duel', async (req, res) => {
+  const page  = Math.max(parseInt(req.query.page,10)||1,1)
+  const limit = 50, offset = (page-1)*limit
+
+  try {
+    const totalRes = await db.query(`SELECT COUNT(*) FROM users`)
+    const total = parseInt(totalRes.rows[0].count, 10)
+
+    const { rows: entries } = await db.query(
+      `SELECT username, duelvictories
+         FROM users
+        ORDER BY duelvictories DESC
+        LIMIT $1 OFFSET $2`,
+      [limit, offset]
+    )
+
+    res.json({ page, total, entries })
+  } catch (err) {
+    console.error('Duel leaderboard error', err)
+    res.status(500).json({ error: 'Could not load duel leaderboard' })
+  }
+})
+
 module.exports = router;
