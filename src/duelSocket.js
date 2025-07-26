@@ -148,49 +148,96 @@ function registerDuelHandlers(io) {
       const iv = setInterval(() => {
         const elapsedSec = Math.floor((Date.now() - startTs) / 1000)
         const perRound   = ROUND_DURATION / 1000
-        const clamped    = Math.min(elapsedSec, perRound * 5)
-        const idx        = Math.floor(clamped / perRound)
-        const roundNum   = idx + 1
-        const secInto    = clamped % perRound
-        const timeLeft   = Math.max(perRound - secInto, 0)
-        io.to(sessionId).emit('timer', { round: roundNum, timeLeft })
+
+        // STOP before emitting if we've completed all 5 rounds
         if (elapsedSec >= perRound * 5) {
           clearInterval(iv)
           sessionIntervals.delete(sessionId)
+          return
         }
+        // otherwise compute current round & remaining seconds
+        const idx      = Math.floor(elapsedSec / perRound)      // 0–4
+        const roundNum = idx + 1
+        const secInto  = elapsedSec % perRound
+        const timeLeft = perRound - secInto
+        io.to(sessionId).emit('timer', { round: roundNum, timeLeft })
       }, 1000)
       sessionIntervals.set(sessionId, iv)
 
       // schedule game-over
+      // schedule game‑over
       setTimeout(() => {
-        const scoresMap = sessionScores.get(sessionId) || new Map()
-        const members   = Array.from(io.sockets.adapter.rooms.get(sessionId) || [])
-        if (members.length < 2) return
+        (async () => {
+          try {
+            const scoresMap = sessionScores.get(sessionId) || new Map()
+            const players   = Array.from(io.sockets.adapter.rooms.get(sessionId) || [])
+            if (players.length < 2) return
 
-        members.forEach(sockId => {
-          const cid     = socketToClient.get(sockId)
-          const score   = scoresMap.get(cid) || 0
-          const oppId   = members.find(x => x !== sockId)
-          const oppCid  = socketToClient.get(oppId)
-          const oppScore= scoresMap.get(oppCid) || 0
-          const user    = onlineUsers.get(sockId) || { username: 'You' }
-          const oppUser = onlineUsers.get(oppId)  || { username: 'Opponent' }
+            const [sockA, sockB] = players
+            const cidA   = socketToClient.get(sockA)
+            const cidB   = socketToClient.get(sockB)
+            const scoreA = scoresMap.get(cidA) || 0
+            const scoreB = scoresMap.get(cidB) || 0
 
-          io.to(sockId).emit('game-over', {
-            you:      { name: user.username,    score },
-            opponent: { name: oppUser.username, score: oppScore }
-          })
-        })
+            const userA = onlineUsers.get(sockA) || {}
+            const userB = onlineUsers.get(sockB) || {}
 
-        // cleanup all in‑memory maps
-        clearInterval(sessionIntervals.get(sessionId))
-        sessionIntervals.delete(sessionId)
-        sessionStartTimes.delete(sessionId)
-        sessionScores.delete(sessionId)
-        sessionSubs.delete(sessionId)
-        sessionFlags.delete(sessionId)
-        sessionHintUsage.delete(sessionId)
+            // 1) emit game‑over to both
+            io.to(sockA).emit('game-over', {
+              you:      { name: userA.username, score: scoreA },
+              opponent: { name: userB.username, score: scoreB }
+            })
+            io.to(sockB).emit('game-over', {
+              you:      { name: userB.username, score: scoreB },
+              opponent: { name: userA.username, score: scoreA }
+            })
+
+            // — DEBUG: print out final tallies
+            console.log(
+              `[DUEL] Final scores for session ${sessionId}: ` +
+              `${userA.username}=${scoreA}, ${userB.username}=${scoreB}`
+            )
+
+            // 2) pick winner and bump their tally
+            if (scoreA > scoreB && userA.userId) {
+              console.log(
+                `[DUEL] ${userA.username} (id=${userA.userId}) won → +1 duelvictories`
+              )
+              await db.query(
+                `UPDATE users
+                    SET duelvictories = duelvictories + 1
+                  WHERE id = $1`,
+                [userA.userId]
+              )
+            } else if (scoreB > scoreA && userB.userId) {
+              console.log(
+                `[DUEL] ${userB.username} (id=${userB.userId}) won → +1 duelvictories`
+              )
+              await db.query(
+                `UPDATE users
+                    SET duelvictories = duelvictories + 1
+                  WHERE id = $1`,
+                [userB.userId]
+              )
+            } else {
+              console.log(`[DUEL] Tie or no valid userIds: no update`)
+            }
+
+          } catch (err) {
+            console.error('[DUEL] game-over error for session', sessionId, err)
+          } finally {
+            // 3) cleanup in‑memory
+            clearInterval(sessionIntervals.get(sessionId))
+            sessionIntervals.delete(sessionId)
+            sessionStartTimes.delete(sessionId)
+            sessionScores.delete(sessionId)
+            sessionSubs.delete(sessionId)
+            sessionFlags.delete(sessionId)
+            sessionHintUsage.delete(sessionId)
+          }
+        })()
       }, ROUND_DURATION * 5 + 500)
+
     })
 
     // 4) handle hint‑requests
@@ -243,6 +290,25 @@ function registerDuelHandlers(io) {
       const scoresMap = sessionScores.get(sessionId)
       if (!scoresMap) return
 
+      // determine which flag code
+      const codes = sessionFlags.get(sessionId) || []
+      const idx   = round - 1
+      if (idx < 0 || idx >= codes.length) return
+      const code = codes[idx]
+
+      // look up our metadata for this flag
+      const meta = flags.find(f => f.code === code)
+      if (!meta) return
+
+      // — VALIDATION: compare against accepted answers
+      const normalized = guess.trim().toLowerCase()
+      const correctMatch = Array.isArray(meta.answers)
+        && meta.answers.some(a => a.toLowerCase() === normalized)
+      if (!correctMatch) {
+        // wrong: notify client and bail out
+        return socket.emit('incorrect-guess')
+      }
+      
       // calculate hint‑penalty
       const penalties   = [150,300,750]
       const count       = Math.min(Number(hintsUsed)||0, penalties.length)

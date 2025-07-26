@@ -1,6 +1,7 @@
 // src/soloSocket.js
 const { v4: uuidv4 } = require('uuid');
 const { flags, flagsByCode } = require('./game');
+const db = require('./db');
 
 /**
  * SOLO MODE CONFIG
@@ -35,7 +36,7 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
     /**
      * Start a solo session
      */
-    socket.on('solo-start', ({ clientId }) => {
+    socket.on('solo-start', ({ clientId, userId }) => {
       let sessionId = clientToSolo.get(clientId);
       if (sessionId && soloSessions.has(sessionId)) {
         socket.emit('solo-started', { sessionId });
@@ -54,6 +55,7 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
 
       soloSessions.set(sessionId, {
         clientId,
+        userId,
         startedAt,
         idx: 0,
         codes,
@@ -210,7 +212,7 @@ function startTimer(sessionId, io) {
   soloIntervals.set(sessionId, iv);
 }
 
-function endSolo(sessionId, io) {
+async function endSolo(sessionId, io) {
   const sess = soloSessions.get(sessionId);
   if (!sess) return;
 
@@ -219,6 +221,23 @@ function endSolo(sessionId, io) {
     correctCount: sess.correct.size,
     skippedCount: sess.skipped.size
   });
+
+  // 3b) update Postgres for signed‑in user
+  // only update for real signed‑in users
+  const uid = parseInt(sess.userId, 10)
+  if (!isNaN(uid)) {
+    try {
+      await db.query(
+        `UPDATE users
+            SET lastbestsoloscore = $1,
+                bestsoloscore     = GREATEST(bestsoloscore, $1)
+          WHERE id = $2`,
+        [sess.score, uid]
+      )
+    } catch (err) {
+      console.error('Failed to update solo scores for user', sess.userId, err)
+    }
+  }
 
   clearInterval(soloIntervals.get(sessionId));
   soloIntervals.delete(sessionId);
