@@ -249,14 +249,9 @@ function registerDuelHandlers(io) {
       }
       const code = codes[idx]
       const meta = flags.find(f => f.code === code) || {}
-      const raw  = meta.hints || {}
-      const all  = []
-      if (raw.population)      all.push(`Population: ${raw.population}`)
-      if (raw.last_letter)     all.push(`Last letter: ${raw.last_letter}`)
-      if (raw.word_count != null) all.push(`Word count: ${raw.word_count}`)
-      if (raw.capital)         all.push(`Capital: ${raw.capital}`)
-      if (raw.word_size)       all.push(`Word size: ${raw.word_size}`)
+      const raw  = meta.hints || {}              // now { easy: [...], medium: [...], hard: [...] }
 
+      // Set up per‑client/round usage
       let per = sessionHintUsage.get(sessionId)
       if (!per) {
         per = new Map()
@@ -267,15 +262,23 @@ function registerDuelHandlers(io) {
       if (!usage || usage.round !== round) {
         usage = { round, used: [] }
         per.set(clientId, usage)
-      }
+     }
+     // Max 3 hints
       if (usage.used.length >= 3) {
         return socket.emit('hint-selected', { error: 'No hints left' })
       }
 
-      const avail = all.filter(h => !usage.used.includes(h))
+      // Decide which bucket to pull from:
+      const phase = usage.used.length     // 0 -> first hint, 1 -> second, 2 -> third
+      const tier  = ['easy','medium','hard'][phase]
+      const pool  = Array.isArray(raw[tier]) ? raw[tier] : []
+      // filter out repeats
+      const avail = pool.filter(h => !usage.used.includes(h))
       if (!avail.length) {
-        return socket.emit('hint-selected', { error: 'No hints left' })
+        return socket.emit('hint-selected', { error: 'No hints left in '+tier })
       }
+
+      // pick one at random
       const pick = avail[Math.floor(Math.random() * avail.length)]
       usage.used.push(pick)
 

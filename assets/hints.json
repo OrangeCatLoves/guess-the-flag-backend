@@ -1,206 +1,367 @@
 {
   "afghanistan": {
-    "population": "41M",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Kabul",
-    "word_size": "_ _ _ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 41M",
+      "Last letter: N"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Kabul"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _ _ _ _"
+    ]
   },
   "albania": {
-    "population": "2.8M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Tirana",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 2.8M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Tirana"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "algeria": {
-    "population": "45M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Algiers",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 45M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Algiers"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "andorra": {
-    "population": "79K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Andorra la Vella",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 79K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Andorra la Vella"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "angola": {
-    "population": "36M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Luanda",
-    "word_size": "_ _ _ _ _ _"
+    "easy": [
+      "Population: 36M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Luanda"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _"
+    ]
   },
   "antigua-and-barbuda": {
-    "population": "99K",
-    "last_letter": "A",
-    "word_count": 3,
-    "capital": "Saint John's",
-    "word_size": "_ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 99K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 3",
+      "Capital: Saint John's"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _"
+    ]
   },
   "argentina": {
-    "population": "46M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Buenos Aires",
-    "word_size": "_ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 46M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Buenos Aires"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _ _"
+    ]
   },
   "armenia": {
-    "population": "2.8M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Yerevan",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 2.8M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Yerevan"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "australia": {
-    "population": "26.5M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Canberra",
-    "word_size": "_ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 26.5M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Canberra"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _ _"
+    ]
   },
   "austria": {
-    "population": "9M",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Vienna",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 9M",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Vienna"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "azerbaijan": {
-    "population": "10.3M",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Baku",
-    "word_size": "_ _ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 10.3M",
+      "Last letter: N"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Baku"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _ _ _"
+    ]
   },
   "bahamas": {
-    "population": "410K",
-    "last_letter": "S",
-    "word_count": 1,
-    "capital": "Nassau",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 410K",
+      "Last letter: S"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Nassau"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "bahrain": {
-    "population": "1.8M",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Manama",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 1.8M",
+      "Last letter: N"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Manama"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "bangladesh": {
-    "population": "172M",
-    "last_letter": "H",
-    "word_count": 1,
-    "capital": "Dhaka",
-    "word_size": "_ _ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 172M",
+      "Last letter: H"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Dhaka"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _ _ _"
+    ]
   },
   "barbados": {
-    "population": "280K",
-    "last_letter": "S",
-    "word_count": 1,
-    "capital": "Bridgetown",
-    "word_size": "_ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 280K",
+      "Last letter: S"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Bridgetown"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _"
+    ]
   },
   "belarus": {
-    "population": "100K",
-    "last_letter": "S",
-    "word_count": 1,
-    "capital": "Minsk",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: S"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Minsk"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "belgium": {
-    "population": "100K",
-    "last_letter": "M",
-    "word_count": 1,
-    "capital": "Brussels",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: M"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Brussels"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "belize": {
-    "population": "100K",
-    "last_letter": "E",
-    "word_count": 1,
-    "capital": "Belmopan",
-    "word_size": "_ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: E"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Belmopan"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _"
+    ]
   },
   "benin": {
-    "population": "100K",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Porto-Novo",
-    "word_size": "_ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: N"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Porto-Novo"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _"
+    ]
   },
   "bhutan": {
-    "population": "100K",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Thimphu",
-    "word_size": "_ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: N"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Thimphu"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _"
+    ]
   },
   "bolivia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Sucre",
-    "word_size": "_ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Sucre"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "bosnia-and-herzegovina": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 3,
-    "capital": "Sarajevo",
-    "word_size": "_ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 3",
+      "Capital: Sarajevo"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _      _ _ _      _ _ _ _ _ _ _ _ _ _ _"
+    ]
   },
   "botswana": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Gaborone",
-    "word_size": "_ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Gaborone"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _"
+    ]
   },
   "brazil": {
-    "population": "100K",
-    "last_letter": "L",
-    "word_count": 1,
-    "capital": "Brasilia",
-    "word_size": "_ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: L"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Brasilia"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _"
+    ]
   },
   "brunei": {
-    "population": "100K",
-    "last_letter": "I",
-    "word_count": 1,
-    "capital": "Bandar Seri Begawan",
-    "word_size": "_ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: I"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Bandar Seri Begawan"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _"
+    ]
   },
   "bulgaria": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Sofia",
-    "word_size": "_ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: A"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Sofia"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _ _"
+    ]
   },
   "burkina-faso": {
-    "population": "100K",
-    "last_letter": "O",
-    "word_count": 2,
-    "capital": "Ouagadougou",
-    "word_size": "_ _ _ _ _ _ _      _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: O"
+    ],
+    "medium": [
+      "Word count: 2",
+      "Capital: Ouagadougou"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _      _ _ _ _"
+    ]
   },
   "burundi": {
-    "population": "100K",
-    "last_letter": "I",
-    "word_count": 1,
-    "capital": "Gitega",
-    "word_size": "_ _ _ _ _ _ _"
-  },
-  "cambodia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+    "easy": [
+      "Population: 100K",
+      "Last letter: I"
+    ],
+    "medium": [
+      "Word count: 1",
+      "Capital: Gitega"
+    ],
+    "hard": [
+      "Word size: _ _ _ _ _ _ _"
+    ]
   },
   "cameroon": {
     "population": "100K",
