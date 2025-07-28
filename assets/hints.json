@@ -99,172 +99,76 @@
 
   },
   "chile": {
-    "population": "100K",
-    "last_letter": "E",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _"
+
   },
   "china": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _"
+
   },
   "colombia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+
   },
   "comoros": {
-    "population": "100K",
-    "last_letter": "S",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "congo": {
-    "population": "100K",
-    "last_letter": "O",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _"
+ 
   },
   "costa-rica": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _      _ _ _ _"
+
   },
   "croatia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "cuba": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _"
+
   },
   "cyprus": {
-    "population": "100K",
-    "last_letter": "S",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _"
+
   },
   "czechia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "democratic-republic-of-the-congo": {
-    "population": "100K",
-    "last_letter": "O",
-    "word_count": 5,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _ _ _      _ _ _ _ _ _ _ _      _ _      _ _ _      _ _ _ _ _"
+
   },
   "denmark": {
-    "population": "100K",
-    "last_letter": "K",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "djibouti": {
-    "population": "100K",
-    "last_letter": "I",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+
   },
   "dominica": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+
   },
   "dominican-republic": {
-    "population": "100K",
-    "last_letter": "C",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _ _      _ _ _ _ _ _ _ _"
+
   },
   "east-timor": {
-    "population": "100K",
-    "last_letter": "R",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _ _ _      _ _ _ _ _"
+
   },
   "ecuador": {
-    "population": "100K",
-    "last_letter": "R",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "egypt": {
-    "population": "100K",
-    "last_letter": "T",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _"
+
   },
   "el-salvador": {
-    "population": "100K",
-    "last_letter": "R",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _      _ _ _ _ _ _ _ _"
+
   },
   "equatorial-guinea": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _ _ _      _ _ _ _ _ _"
+
   },
   "eritrea": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "estonia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _"
+
   },
   "eswatini": {
-    "population": "100K",
-    "last_letter": "I",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+
   },
   "ethiopia": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+ 
   },
   "fiji": {
     "population": "100K",
