@@ -54,17 +54,33 @@ function registerDuelHandlers(io) {
         socket.emit('timer', { round: roundNum, timeLeft })
 
         // re‑emit any hints used this round
+        const code = sessionFlags.get(sessionId)[idx]
+        const meta = flags.find(f => f.code === code)
         const perHints = sessionHintUsage.get(sessionId)
         if (perHints) {
-          const usage = perHints.get(clientId)
-          if (usage && usage.round === roundNum) {
-            usage.used.forEach(h =>
-              socket.emit('hint-selected', { hint: h, usedCount: usage.used.length })
-            )
+          // 1) if no usage for this user *or* it’s from a previous round, reset it now
+          let usage = perHints.get(clientId)
+          if (!usage || usage.round !== roundNum) {
+            usage = { round: roundNum, revealed: new Set(), count: 0 }
+            perHints.set(clientId, usage)
+          }
+
+          // 2) now re‑emit *any* letters already revealed this round
+          if (usage.revealed.size > 0) {
+            const name    = meta.code.replace(/-/g,' ')
+            const letters = name.split('')
+            const mask    = letters.map((c,i) =>
+              usage.revealed.has(i)
+                ? c.toUpperCase()
+                : (/[A-Za-z]/.test(c) ? '_' : c)
+            ).join('')
+            socket.emit('hint-updated', {
+              mask,
+              used: usage.count
+            })
           }
         }
       }
-
       // rehydrate score + submissions
       const scoresMap = sessionScores.get(sessionId) || new Map()
       const yourScore = scoresMap.get(clientId) || 0
@@ -242,51 +258,75 @@ function registerDuelHandlers(io) {
 
     // 4) handle hint‑requests
     socket.on('use-hint', ({ sessionId, round }) => {
-      const codes = sessionFlags.get(sessionId) || []
-      const idx   = round - 1
-      if (idx < 0 || idx >= codes.length) {
-        return socket.emit('hint-selected', { error: 'Invalid round' })
-      }
-      const code = codes[idx]
-      const meta = flags.find(f => f.code === code) || {}
-      const raw  = meta.hints || {}              // now { easy: [...], medium: [...], hard: [...] }
+      const codes   = sessionFlags.get(sessionId) || [];
+      const idx     = round - 1;
+      const code    = codes[idx];
+      if (!code) return socket.emit('hint-error', 'Invalid round');
 
-      // Set up per‑client/round usage
-      let per = sessionHintUsage.get(sessionId)
+      //––– track per‑user, per‑round revealed positions + click count
+      let per = sessionHintUsage.get(sessionId);
       if (!per) {
-        per = new Map()
-        sessionHintUsage.set(sessionId, per)
+        per = new Map();
+        sessionHintUsage.set(sessionId, per);
       }
-      const clientId = socketToClient.get(socket.id)
-      let usage = per.get(clientId)
+      const clientId = socketToClient.get(socket.id);
+      let usage = per.get(clientId);
       if (!usage || usage.round !== round) {
-        usage = { round, used: [] }
-        per.set(clientId, usage)
-     }
-     // Max 3 hints
-      if (usage.used.length >= 3) {
-        return socket.emit('hint-selected', { error: 'No hints left' })
+        // start fresh for this round
+        usage = { round, revealed: new Set(), count: 0 };
+        per.set(clientId, usage);
       }
 
-      // Decide which bucket to pull from:
-      const phase = usage.used.length     // 0 -> first hint, 1 -> second, 2 -> third
-      const tier  = ['easy','medium','hard'][phase]
-      const pool  = Array.isArray(raw[tier]) ? raw[tier] : []
-      // filter out repeats
-      const avail = pool.filter(h => !usage.used.includes(h))
-      if (!avail.length) {
-        return socket.emit('hint-selected', { error: 'No hints left in '+tier })
+      // refuse if they've already clicked 3 times
+      if (usage.count >= 3) {
+        return socket.emit('hint-error', 'No more hints');
       }
 
-      // pick one at random
-      const pick = avail[Math.floor(Math.random() * avail.length)]
-      usage.used.push(pick)
+      // record this click
+      usage.count++;
 
-      socket.emit('hint-selected', {
-        hint:      pick,
-        usedCount: usage.used.length
-      })
-    })
+      // build the “name” we’re revealing letters of:
+      const name        = code.replace(/-/g, ' ');
+      const letters     = name.split('');
+      const letterCount = letters.filter(c => /[A-Za-z]/.test(c)).length;
+
+      // decide how many letters to reveal per click
+      let toReveal;
+      if (letterCount > 20)      toReveal = 3;
+      else if (letterCount > 10) toReveal = 2;
+      else                       toReveal = 1;
+
+      // pick random unrevealed letter positions
+      const available = letters
+        .map((c,i) => i)
+        .filter(i => /[A-Za-z]/.test(letters[i]) && !usage.revealed.has(i));
+      if (available.length === 0) {
+        return socket.emit('hint-error', 'No more letters');
+      }
+
+      // clamp reveal count
+      const pickCount = Math.min(toReveal, available.length);
+      for (let j = 0; j < pickCount; j++) {
+        const choice = available.splice(
+          Math.floor(Math.random()*available.length), 1
+        )[0];
+        usage.revealed.add(choice);
+      }
+
+      // build masked string
+      const mask = letters.map((c,i) =>
+        usage.revealed.has(i)
+          ? c.toUpperCase()
+          : (/[A-Za-z]/.test(c) ? '_' : c)
+      ).join('');
+
+      // send back: the new mask + how many times they've clicked
+      socket.emit('hint-updated', {
+        mask,
+        used: usage.count
+      });
+    });
+
 
     // 5) handle guess submissions
     socket.on('submit-guess', ({ sessionId, guess, hintsUsed, timeLeft, round }) => {
