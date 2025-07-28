@@ -84,39 +84,19 @@
     
   },
   "cameroon": {
-    "population": "100K",
-    "last_letter": "N",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _ _"
+  
   },
   "canada": {
-    "population": "100K",
-    "last_letter": "A",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _"
+
   },
   "cape-verde": {
-    "population": "100K",
-    "last_letter": "E",
-    "word_count": 2,
-    "capital": "Capital",
-    "word_size": "_ _ _ _      _ _ _ _ _"
+
   },
   "central-african-republic": {
-    "population": "100K",
-    "last_letter": "C",
-    "word_count": 3,
-    "capital": "Capital",
-    "word_size": "_ _ _ _ _ _ _      _ _ _ _ _ _ _      _ _ _ _ _ _ _ _"
+ 
   },
   "chad": {
-    "population": "100K",
-    "last_letter": "D",
-    "word_count": 1,
-    "capital": "Capital",
-    "word_size": "_ _ _ _"
+
   },
   "chile": {
     "population": "100K",
