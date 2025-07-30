@@ -214,29 +214,34 @@ function registerDuelHandlers(io) {
               `${userA.username}=${scoreA}, ${userB.username}=${scoreB}`
             )
 
-            // 2) pick winner and bump their tally
-            if (scoreA > scoreB && userA.userId) {
-              console.log(
-                `[DUEL] ${userA.username} (id=${userA.userId}) won → +1 duelvictories`
-              )
-              await db.query(
-                `UPDATE users
-                    SET duelvictories = duelvictories + 1
-                  WHERE id = $1`,
-                [userA.userId]
-              )
-            } else if (scoreB > scoreA && userB.userId) {
-              console.log(
-                `[DUEL] ${userB.username} (id=${userB.userId}) won → +1 duelvictories`
-              )
-              await db.query(
-                `UPDATE users
-                    SET duelvictories = duelvictories + 1
-                  WHERE id = $1`,
-                [userB.userId]
-              )
+            // 2) pick winner
+            if (scoreA > scoreB) {
+              console.log(`[DUEL] ${userA.username} (id=${userA.userId}) won`)
+              // only update the DB for non‑guest users with a real integer ID
+              if (!userA.guest && Number.isInteger(userA.userId)) {
+                await db.query(
+                  `UPDATE users
+                      SET duelvictories = duelvictories + 1
+                    WHERE id = $1`,
+                  [userA.userId]
+                )
+              } else {
+                console.log(`[DUEL] guest win — skipping DB update`)
+              }
+            } else if (scoreB > scoreA) {
+              console.log(`[DUEL] ${userB.username} (id=${userB.userId}) won`)
+              if (!userB.guest && Number.isInteger(userB.userId)) {
+                await db.query(
+                  `UPDATE users
+                      SET duelvictories = duelvictories + 1
+                    WHERE id = $1`,
+                  [userB.userId]
+                )
+              } else {
+                console.log(`[DUEL] guest win — skipping DB update`)
+              }
             } else {
-              console.log(`[DUEL] Tie or no valid userIds: no update`)
+              console.log(`[DUEL] Tie: no update`)
             }
 
           } catch (err) {

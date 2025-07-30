@@ -29,6 +29,7 @@ const soloSessions  = new Map(); // sessionId -> sessionState
 const soloIntervals = new Map(); // sessionId -> intervalId
 const socketToSolo  = new Map(); // socketId  -> sessionId
 const clientToSolo  = new Map(); // clientId  -> sessionId
+const soloHintUsage = new Map(); // sessionId → Map<clientId,{ round, revealed:Set, count }>
 
 module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
   io.on('connection', socket => {
@@ -92,6 +93,25 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
       });
 
       emitCurrentFlag(sessionId, socket);
+      // rehydrate any letters already revealed this round
+      const usageMap = soloHintUsage.get(sessionId)
+      if (usageMap) {
+        const usage = usageMap.get(sess.clientId)
+        if (usage && usage.round === sess.idx) {
+          // rebuild mask
+          const name    = sess.codes[sess.idx].replace(/-/g,' ')
+          const letters = name.split('')
+          const mask    = letters.map((c,i) =>
+            usage.revealed.has(i)
+              ? c.toUpperCase()
+              : (/[A-Za-z]/.test(c) ? '_' : c)
+          ).join('')
+          socket.emit('solo-hint', {
+            mask,
+            used: usage.count
+          })
+        }
+      }
     });
 
     /**
@@ -165,6 +185,72 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
 
       emitCurrentFlag(sessionId, io.to(sessionId));
     });
+
+        // 7) handle hint‑requests for Solo
+    socket.on('solo-use-hint', ({ sessionId, clientId }) => {
+      const sess = soloSessions.get(sessionId)
+      if (!sess || sess.clientId !== clientId) return
+
+      // per-session / per-user usage map
+      let per = soloHintUsage.get(sessionId)
+      if (!per) {
+        per = new Map()
+        soloHintUsage.set(sessionId, per)
+      }
+
+      // fresh usage for this round?
+      let usage = per.get(clientId)
+      if (!usage || usage.round !== sess.idx) {
+        usage = { round: sess.idx, revealed: new Set(), count: 0 }
+        per.set(clientId, usage)
+      }
+
+      // cap at 3 clicks
+      if (usage.count >= 3) {
+        return socket.emit('solo-hint-error', 'No more hints')
+      }
+      usage.count++
+
+      // decide how many letters to reveal
+      const name        = sess.codes[sess.idx].replace(/-/g,' ')
+      const letters     = name.split('')
+      const letterCount = letters.filter(c=>/[A-Za-z]/.test(c)).length
+      let toReveal
+      if (letterCount > 20)      toReveal = 3
+      else if (letterCount > 10) toReveal = 2
+      else                       toReveal = 1
+
+      // pick random unrevealed positions
+      const available = letters
+        .map((c,i) => i)
+        .filter(i => /[A-Za-z]/.test(letters[i]) && !usage.revealed.has(i))
+      const pick = Math.min(toReveal, available.length)
+      for (let j = 0; j < pick; j++) {
+        const idx = available.splice(Math.floor(Math.random()*available.length),1)[0]
+        usage.revealed.add(idx)
+      }
+
+      // rebuild the mask
+      const mask = letters.map((c,i) =>
+        usage.revealed.has(i)
+          ? c.toUpperCase()
+          : (/[A-Za-z]/.test(c) ? '_' : c)
+      ).join('')
+
+      // apply the penalty: 50, 100, 200
+      const penalties = [50,100,200]
+      const pen = penalties[usage.count - 1] || 0
+      sess.score = Math.max(0, +((sess.score - pen).toFixed(2)))
+
+      // send back to client
+      socket.emit('solo-hint', {
+        mask,
+        used:       usage.count,
+        penalty:    pen,
+        totalScore: sess.score
+      })
+    })
+
 
     socket.on('disconnect', () => {
       const sessionId = socketToSolo.get(socket.id);
@@ -241,6 +327,7 @@ async function endSolo(sessionId, io) {
 
   clearInterval(soloIntervals.get(sessionId));
   soloIntervals.delete(sessionId);
+  soloHintUsage.delete(sessionId)
   soloSessions.delete(sessionId);
 }
 
