@@ -214,31 +214,32 @@ function registerDuelHandlers(io) {
               `${userA.username}=${scoreA}, ${userB.username}=${scoreB}`
             )
 
-            // 2) pick winner
+            // 2) pick winner + bump tally only for signed users
             if (scoreA > scoreB) {
               console.log(`[DUEL] ${userA.username} (id=${userA.userId}) won`)
-              // only update the DB for non‑guest users with a real integer ID
-              if (!userA.guest && Number.isInteger(userA.userId)) {
+              const uidA = parseInt(userA.userId, 10)
+              if (!userA.guest && Number.isInteger(uidA)) {
                 await db.query(
                   `UPDATE users
                       SET duelvictories = duelvictories + 1
                     WHERE id = $1`,
-                  [userA.userId]
+                  [uidA]
                 )
               } else {
-                console.log(`[DUEL] guest win — skipping DB update`)
+                console.log(`[DUEL] skipping DB update for guest/invalid-id`)
               }
             } else if (scoreB > scoreA) {
               console.log(`[DUEL] ${userB.username} (id=${userB.userId}) won`)
-              if (!userB.guest && Number.isInteger(userB.userId)) {
+              const uidB = parseInt(userB.userId, 10)
+              if (!userB.guest && Number.isInteger(uidB)) {
                 await db.query(
                   `UPDATE users
                       SET duelvictories = duelvictories + 1
                     WHERE id = $1`,
-                  [userB.userId]
+                  [uidB]
                 )
               } else {
-                console.log(`[DUEL] guest win — skipping DB update`)
+                console.log(`[DUEL] skipping DB update for guest/invalid-id`)
               }
             } else {
               console.log(`[DUEL] Tie: no update`)
