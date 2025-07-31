@@ -163,6 +163,10 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
       const sess = soloSessions.get(sessionId);
       if (!sess) return;
 
+      // --- grab the code & meta of the flag they are skipping, BEFORE advancing sess.idx ---
+      const code = sess.codes[sess.idx];
+      const meta = flagsByCode.get(code);
+
       sess.skipCount += 1;
       const mult    = skipMultiplier(sess.skipCount);
       const penalty = parseFloat((BASE_POINTS * mult).toFixed(2));
@@ -174,15 +178,15 @@ module.exports.registerSoloHandlers = function registerSoloHandlers(io) {
       // LOG skip computation
       console.log(`[SOLO] Skip -> base=${BASE_POINTS}, skipCount=${sess.skipCount}, mult=${mult.toFixed(2)}, penalty=${penalty.toFixed(2)}, total=${sess.score.toFixed(2)}`);
 
-      // next flag
-      sess.idx += 1;
-
       socket.emit('solo-skipped', {
         penalty,
         totalScore: sess.score,
-        skipCount: sess.skipCount
+        skipCount: sess.skipCount,
+        answer: (meta.answers && meta.answers[0]) || code.replace(/-/g,' ')
       });
-
+      
+      // next flag
+      sess.idx += 1;
       emitCurrentFlag(sessionId, io.to(sessionId));
     });
 
