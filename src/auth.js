@@ -13,7 +13,9 @@ const loginLimiter = rateLimit({
   max: 5,                  // limit each IP to 10 requests per windowMs
   message: { error: 'Too many login attempts, please try again later.' },
   standardHeaders: true,    // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false      // Disable the `X-RateLimit-*` headers
+  legacyHeaders: false,      // Disable the `X-RateLimit-*` headers
+  // only count requests that end up with an error status
+  skipSuccessfulRequests: true
 });
 
 // — POST /auth/register
