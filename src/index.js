@@ -18,13 +18,23 @@ server.listen(port, () => {
 
 // middleware
 app.use(express.json());
+
+// Dynamic CORS for all REST endpoints
 const cors = require('cors');
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,  // e.g. http://localhost:5173
-    methods: ['GET','POST']
-  })
-);
+const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173')
+  .split(',')
+  .map(u => u.trim());
+
+app.use(cors({
+  origin: (incomingOrigin, callback) => {
+    if (!incomingOrigin) return callback(null, true);           // e.g. mobile apps, CLI
+    if (allowedOrigins.includes(incomingOrigin)) 
+      return callback(null, incomingOrigin);                    // reflect single origin
+    callback(new Error('Not allowed by CORS'), false);
+  },
+  methods: ['GET','POST'],
+  credentials: true
+}));
 app.use('/assets', express.static('assets'));  // now after app is defined
 app.use('/auth', auth);  // mount auth routes
 app.use('/api', api);

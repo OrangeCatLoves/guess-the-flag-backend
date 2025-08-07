@@ -4,11 +4,26 @@ const { registerDuelHandlers } = require('./duelSocket')
 const { registerSoloHandlers } = require('./soloSocket')
 
 function initSocket(server) {
-  // Read FRONTEND_URL from env, fallback to localhost for dev
-  const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173'
+  // Build an allow-list from the env var
+  const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173')
+    .split(',')
+    .map(u => u.trim());
+
+  // Dynamic CORS origin function
+  const originChecker = (incomingOrigin, callback) => {
+    if (!incomingOrigin) 
+      return callback(null, true);              // allow tools like curl or mobile apps
+    if (allowedOrigins.includes(incomingOrigin)) 
+      return callback(null, incomingOrigin);    // echo back the single, valid origin
+    callback(new Error('CORS not allowed'), false);
+  };
+
   const io = new Server(server, {
-    cors: { origin: FRONTEND_URL.split(','), methods: ['GET','POST'] }
-  })
+    cors: {
+      origin: originChecker,
+      methods: ['GET','POST']
+    }
+  });
 
   // wire up duel and solo modes
   registerDuelHandlers(io)
